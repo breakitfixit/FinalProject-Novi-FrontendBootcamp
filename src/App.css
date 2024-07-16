@@ -1,0 +1,50 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Zorgt ervoor dat de App container de volledige schermhoogte inneemt */
+    width: 100vw; /* Zorgt ervoor dat de App container de volledige schermbreedte inneemt */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./assets/images/background-image.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 1392px;
+    height: 64px;
+    left: 24px;
+    top: 24px;
+    background: #F8F9FA;
+    border: 1px solid #DEE2E6;
+    border-radius: 16px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Pas dit aan op basis van je voorkeur */
+
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.tapePanel {
+    position: absolute;
+    width: 1076px;
+    height: 663px;
+    left: 182px;
+    top: 180px;
+    background: #F8F9FA;
+    border-radius: 32px;
+}

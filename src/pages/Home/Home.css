@@ -3,7 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 600vh;
-  border: orangered 3px dot-dot-dash;
+  height: 65vh;
+  /*border: red 3px dotted;*/
 }
 
+.intro-text {
+  flex-wrap: wrap;
+  width: 511px;
+}

@@ -1,14 +1,32 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
 import './Searchbar.css';
 
-const
+const Searchbar = () => {
+       const [searchTerm, setSearchTerm] = useState('');
+       const [searchClicked, setSearchClicked] = useState(false);
 
-<input className="searchbar"
-       type="text"
-       placeholder="Zoeken op ISRC..."
-       value={searchTerm}
-       onChange={handleSearchChange}
-/>
+       const handleSearchChange = (event) => {
+              setSearchTerm(event.target.value);
+       };
+
+       const handleSearch = () => {
+              console.log('Zoeken op ISRC:', searchTerm);
+              setSearchClicked(true);
+              // Hier kun je de zoekfunctie toevoegen om de Apple Music API te gebruiken
+       };
+
+       return (
+           <div className="search-container">
+                  <input
+                      className="searchbar"
+                      type="text"
+                      placeholder="ISRC..."
+                      value={searchTerm}
+                      onChange={handleSearchChange}
+                  />
+                  <button className="button" onClick={handleSearch}>Search</button>
+           </div>
+       );
+};
 
 export default Searchbar;

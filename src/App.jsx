@@ -22,7 +22,6 @@ function App() {
                         <Route path="/profile" element={<Profile/>}/>
                     </Routes>
                 </div>
-
                 <AboutComponent/>
             </main>
             <footer>

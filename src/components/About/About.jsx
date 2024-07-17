@@ -1,14 +1,18 @@
 import React from 'react';
+import './About.css';
 
 const AboutComponent = () => {
     return (
-        <section className="about">
-            <h2>About T00N</h2>
+        <section className="about" id="about">
+            <h2>About T0oN</h2>
             <p>Voer een ISRC in de zoekbalk om beschikbare data te vinden bij Apple Music</p>
 
-            <h3>Wat is een ISRC?</h3>
+            <h2>Wat is een ISRC?</h2>
+            <p>ISRC staat voor International Standard Recording Code. <br/>
+                Het is een unieke code die wordt toegekend aan een masteropname.
+            </p>
 
-            <h3>Waar kan ik een ISRC vinden</h3>
+            <h2>Waar kan ik een ISRC vinden</h2>
             <p>https://www.isrcfinder.com/</p>
 
         </section>

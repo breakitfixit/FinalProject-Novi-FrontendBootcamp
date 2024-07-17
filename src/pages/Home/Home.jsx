@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-// import './Home.css';
+import './Home.css';
+import Searchbar from "../../components/Searchbar/Searchbar.jsx";
 
 function Home() {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [searchClicked, setSearchClicked] = useState(false);
-
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
@@ -22,20 +22,14 @@ function Home() {
                 <h4>Welkom, User</h4>
                 <p>Voer een ISRC in de zoekbalk om beschikbare data te vinden bij Apple Music</p>
             </div>
-            <div className="search-container">
-                <input className="searchbar"
-                       type="text"
-                       placeholder="Zoeken op ISRC..."
-                       value={searchTerm}
-                       onChange={handleSearchChange}
-                />
-                <button className="button" onClick={handleSearch}>Search</button>
+            <Searchbar/>
+            <div className="results-container">
+                {searchClicked && (
+                    <div className="search-results">
+                        <p>resultaten hier</p>
+                    </div>
+                )}
             </div>
-            {/*{searchClicked && (*/}
-            {/*    <div className="results-container">*/}
-            {/*        <p>zoekresultaten hier</p>*/}
-            {/*    </div>*/}
-            {/*)}*/}
         </div>
     )
         ;

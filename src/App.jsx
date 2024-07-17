@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Navbar from './components/navs/Navbar.jsx';
 import Favorites from "./pages/Favorites/Favorites.jsx";
-import AboutComponent from './components/About.jsx';
+import AboutComponent from './components/About/About.jsx';
 import Home from './pages/Home/Home.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 import {Routes, Route} from 'react-router-dom';

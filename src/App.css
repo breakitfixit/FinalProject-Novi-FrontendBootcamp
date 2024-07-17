@@ -41,6 +41,13 @@ body {
     order: 0;
 }
 
+.navbar-logo img {
+    width: 100px;
+    height: 30px;
+    border-radius: 16px;
+    flex-shrink: ;
+}
+
 .navbar ul {
     display: flex;
     flex-direction: row;
@@ -78,8 +85,6 @@ main {
     gap: 10px;
     border-radius: var(--Radiusradius-xxl);
     opacity: 0px;
-;
-    height: 475px;
     background: #F8F9FA;
     border-radius: 32px;
     margin: 50px;

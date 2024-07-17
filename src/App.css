@@ -1,3 +1,54 @@
+/*.navbar {*/
+/*    top: 24px;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    justify-content: space-between; !*logo en ul uiterste zijden*!*/
+/*    flex-wrap: nowrap;*/
+/*    box-sizing: border-box;*/
+/*    width: 1392px;*/
+/*    height: 64px;*/
+/*    left: 24px;*/
+/*    background: #F8F9FA;*/
+/*    !*border: 1px solid #DEE2E6;*!*/
+/*    border-radius: 16px;*/
+/*}*/
+
+/*.navbar-logo {*/
+/*    border-radius: 16px;*/
+/*    flex-grow: 3;*/
+/*    flex-shrink: 0;*/
+/*    flex-basis: auto;*/
+/*    align-self: auto;*/
+/*    order: 0;*/
+/*}*/
+
+/*.navbar-logo img {*/
+/*    width: 100px;*/
+/*    height: 30px;*/
+/*    border-radius: 16px;*/
+/*    flex-shrink: ;*/
+/*}*/
+
+/*.navbar ul {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: flex-end;*/
+/*    align-items: center;*/
+/*    list-style: none;*/
+/*    flex-grow: 0;*/
+/*    flex-shrink: 0;*/
+/*    flex-basis: auto;*/
+/*    align-self: auto;*/
+/*    order: 0;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.navbar ul li {*/
+/*    margin: 0 16px;*/
+/*}*/
+
 .appContainer {
     display: flex;
     flex-direction: column;
@@ -9,63 +60,13 @@
 
 body {
     background-image: url('./assets/images/background-image.png');
-    /*background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
     background-position: center;
-    /*background-position: center center;*/
+    background-position: center center;
     margin: 0;
     padding: 0;
 }
 
-.navbar {
-    top: 24px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; /*logo en ul uiterste zijden*/
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    width: 1392px;
-    height: 64px;
-    left: 24px;
-    background: #F8F9FA;
-    /*border: 1px solid #DEE2E6;*/
-    border-radius: 16px;
-}
-
-.navbar-logo {
-    border-radius: 16px;
-    flex-grow: 3;
-    flex-shrink: 0;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-}
-
-.navbar-logo img {
-    width: 100px;
-    height: 30px;
-    border-radius: 16px;
-    flex-shrink: ;
-}
-
-.navbar ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar ul li {
-    margin: 0 16px;
-}
 
 main {
     display: flex;
@@ -74,7 +75,7 @@ main {
     align-items: center;
     margin-top: 60px;
     border: lightslategrey dotted 2px;
-    width: 100%; /* Voeg deze regel toe */
+    width: 100%;
 }
 
 .tapePanel {
@@ -103,3 +104,4 @@ main {
     gap: 10px;
     opacity: 0px;
 }
+

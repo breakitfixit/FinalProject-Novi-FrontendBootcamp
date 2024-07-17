@@ -1,7 +1,91 @@
-.navbar {
-    width: 1392px;
-    height: 64px;
-    flex-shrink: 0;
-    color: blue;
+/*.navbar {*/
+/*    width: 1392px;*/
+/*    height: 64px;*/
+/*    flex-shrink: 0;*/
+/*    color: blue;*/
+/*}*/
+
+:root {
+    --Primary-Color: #0064FF;
+    --Primary-Color-Dark: #0A58CA;
+    --Primary-Color-Light: #9EC5FE;
+    --Secondary-Color: #00DC2D;
+    --Secondary-Color-Dark: #00AB14;
+    --Secondary-Color-Light: #66F187;
+    --Succes-color: #198754;
+    --Danger-color: #DC3545;
+    --Warning-color: #FFC107;
+    --Info-color: #0D6EFD;
+    --Gray-100: #F8F9FA;
+    --Gray-200: #E9ECEF;
+    --Gray-300: #DEE2E6;
+    --Gray-400: #CED4DA;
+    --Gray-500: #ADB5BD;
+    --Gray-600: #868E96;
+    --Gray-700: #495057;
+    --Gray-800: #343A40;
+    --Gray-900: #212529;
+    --White: #FFFFFF;
+    --Black: #000000;
+    --Blue-100: #CFE2FF;
+    --Blue-200: #9EC5FE;
+    --Blue-300: #6EA8FF;
+    --Radius-radius-xl: 16px;
 }
 
+body {
+    color: #68717A;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+}
+
+h1 {
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h2 {
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h3 {
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h4 {
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h5 {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h6 {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

@@ -1,50 +1,100 @@
-.App {
+.appContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Zorgt ervoor dat de App container de volledige schermhoogte inneemt */
-    width: 100vw; /* Zorgt ervoor dat de App container de volledige schermbreedte inneemt */
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding-top: 64px; /* padding aan de bovenkant toegevoegd voor ruimte vaste navbar */
 }
 
 body {
+    background-image: url('./assets/images/background-image.png');
+    /*background-repeat: no-repeat;*/
+    background-position: center;
+    /*background-position: center center;*/
     margin: 0;
     padding: 0;
-    background-image: url('./assets/images/background-image.png');
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 .navbar {
+    top: 24px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between; /*logo en ul uiterste zijden*/
+    flex-wrap: nowrap;
     box-sizing: border-box;
     width: 1392px;
     height: 64px;
     left: 24px;
-    top: 24px;
     background: #F8F9FA;
-    border: 1px solid #DEE2E6;
+    /*border: 1px solid #DEE2E6;*/
     border-radius: 16px;
+}
+
+.navbar-logo {
+    border-radius: 16px;
+    flex-grow: 3;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
 }
 
 .navbar ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Pas dit aan op basis van je voorkeur */
-
+    justify-content: flex-end;
     align-items: center;
     list-style: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
     padding: 0;
+    margin: 0;
 }
+
+.navbar ul li {
+    margin: 0 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    border: lightslategrey dotted 2px;
+    width: 100%; /* Voeg deze regel toe */
+}
+
 .tapePanel {
-    position: absolute;
     width: 1076px;
     height: 663px;
-    left: 182px;
     top: 180px;
+    left: 182px;
+    gap: 10px;
+    border-radius: var(--Radiusradius-xxl);
+    opacity: 0px;
+;
+    height: 475px;
     background: #F8F9FA;
     border-radius: 32px;
+    margin: 50px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    background: #280096;
+    border-radius: 32px;
+    width: 1440px;
+    height: 663px;
+    gap: 10px;
+    opacity: 0px;
 }

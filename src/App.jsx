@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Navbar from './components/navs/Navbar.jsx';
 import Favorites from "./pages/Favorites/Favorites.jsx";
@@ -10,18 +10,18 @@ import {Routes, Route} from 'react-router-dom';
 
 function App() {
 
-    // voeg navbar toe
-
 
     return (
-        <div>
+        <div className="appContainer">
             <Navbar/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/favorieten" element={<Favorites/>}/>
-                <Route path="/profile" element={<Profile/>}/>
-            </Routes>
             <main>
+                <div className="tapePanel">
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/favorieten" element={<Favorites/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                    </Routes>
+                </div>
 
                 <AboutComponent/>
             </main>

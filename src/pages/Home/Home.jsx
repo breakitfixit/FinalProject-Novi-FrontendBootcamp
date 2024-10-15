@@ -1,38 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Home.css';
-import Searchbar from "../../components/Searchbar/Searchbar.jsx";
+import Searchbar from '../../components/Searchbar/Searchbar';
 
 function Home() {
+    // State voor de gebruikersnaam, initialiseer met waarde uit localStorage indien beschikbaar
+    const [userName, setUserName] = useState(localStorage.getItem('username') || '');
 
-    const [searchTerm, setSearchTerm] = useState('');
-    const [searchClicked, setSearchClicked] = useState(false);
-
-    const handleSearchChange = (event) => {
-        setSearchTerm(event.target.value);
-    };
-
-    const handleSearch = () => {
-        console.log('Zoeken op ISRC:', searchTerm);
-        setSearchClicked(true);
-    };
+    // To do: 'UseEffect toepassen om gebruikersnaam op te halen bij het laden van de pagina'
 
     return (
         <div className="home-container">
             <div className="intro-text">
-                <h4>Welkom, User</h4>
-                <p>Voer een ISRC in de zoekbalk om beschikbare data te vinden bij Apple Music</p>
+                <h4>Welkom, {userName}</h4>
+                <p>
+                    Toon eenvoudig de trackdetails uit Apple Music door te zoeken op ISRC.
+                    <br/>Zoekopties en
+                    databases worden
+                    mogelijk later uitgebreid!
+                </p>
             </div>
+
+            <div className="test-isrcs">TCAIG2485850 / NL4TG2400001
+                <br/>
+                <br/>
+            </div>
+
             <Searchbar/>
-            <div className="results-container">
-                {searchClicked && (
-                    <div className="search-results">
-                        <p>resultaten hier</p>
-                    </div>
-                )}
-            </div>
+
+
         </div>
-    )
-        ;
+    );
 }
 
 export default Home;

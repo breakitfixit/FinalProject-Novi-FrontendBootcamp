@@ -1,0 +1,29 @@
+.login-button {
+    background-color: #007bff; /* Blauwe achtergrond voor de inlogknop */
+    color: white; /* Witte tekst */
+    border: 2px solid #007bff; /* Blauwe rand */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #0056b3; /* Blauwe achtergrond bij hover */
+    color: white; /* Witte tekstkleur bij hover */
+}
+
+.login-button.register {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #00DC2D;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.login-button.register:hover {
+    background-color: #00DC2D;
+    color: white;
+}

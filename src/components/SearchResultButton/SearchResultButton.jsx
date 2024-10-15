@@ -1,1 +1,0 @@
-import './SearchResultButton.css';

@@ -3,15 +3,60 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 2px 0;
-
+    padding: 10px;
+    width: 100%;
+    background: #280096;
+    border-radius: 32px;
+    gap: 10px;
+    position: relative
 }
 
-.about h2{
+/* Op de about pagina heb ik op een andere manier de kleur van de tekst aangepast*/
+/* Informatie zoals 'var(--colors-blue-blue-100' komt uit Figma */
+
+.about h2 {
     color: var(--colors-blue-blue-100, #CFE2FF);
+    font-size: 72px;
+    margin-bottom: 0;
+}
+
+.about h3 {
+    color: var(--colors-blue-blue-100, #CFE2FF);
+    font-size: 24px;
+    margin-bottom: 0;
 }
 
 .about p {
-    /* Body/ Base text */
     color: var(--colors-blue-blue-100, #CFE2FF);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    /*border: 1px solid #CFE2FF;*/
+    min-width: 700px;
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.screw {
+    width: 36px; /* Grootte van de schroef */
+    height: 36px;
+    background-image: url('/src/assets/images/screw.png'); /* Zorg ervoor dat je de juiste afbeelding gebruikt */
+    position: absolute; /* Maak de schroeven absoluut gepositioneerd */
+}
+
+.top-left {
+    left: 24px; /* Plaats de schroef 24px van de linkerkant */
+    top: 24px; /* Plaats de schroef 24px van de bovenkant */
+}
+
+.top-right {
+    right: 24px; /* Plaats de schroef 24px van de rechterkant */
+    top: 24px; /* Plaats de schroef 24px van de bovenkant */
 }

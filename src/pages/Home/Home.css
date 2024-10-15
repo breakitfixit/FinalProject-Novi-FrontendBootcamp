@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  height: 65vh;
-  /*border: red 3px dotted;*/
+  justify-content: flex-start;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 700px;
+  min-height: 400px;
 }
 
-.intro-text {
-  flex-wrap: wrap;
-  width: 511px;
+.test-isrcs {
+  color: #F5F5F5;
 }

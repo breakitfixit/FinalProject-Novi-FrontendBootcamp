@@ -4,17 +4,60 @@ import './About.css';
 const AboutComponent = () => {
     return (
         <section className="about" id="about">
-            <h2>About T0oN</h2>
-            <p>Voer een ISRC in de zoekbalk om beschikbare data te vinden bij Apple Music</p>
+            {/* Schroeven voor decoratie in de layout */}
+            <div className="screw top-left"></div>
+            <div className="screw top-right"></div>
 
-            <h2>Wat is een ISRC?</h2>
-            <p>ISRC staat voor International Standard Recording Code. <br/>
-                Het is een unieke code die wordt toegekend aan een masteropname.
-            </p>
+            {/* Titel van de sectie */}
+            <h2>About</h2>
 
-            <h2>Waar kan ik een ISRC vinden</h2>
-            <p>https://www.isrcfinder.com/</p>
+            {/* Wat is een ISRC? */}
+            <div className="about-item">
+                <h3>Wat is een ISRC?</h3>
+                <p>
+                    Een ISRC (International Standard Recording Code) is een unieke code van 12 karakters die wordt
+                    toegekend aan een geluidsopname. De code identificeert muzieknummers en bestaat uit vier delen:
+                    het land van herkomst, de registratiehouder, het jaar van registratie en een uniek volgnummer.
+                    <br/>
+                    Voor meer informatie over ISRC's, zie: <a
+                    href="https://nl.wikipedia.org/wiki/International_Standard_Recording_Code"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Wikipedia
+                </a>
+                </p>
+            </div>
 
+            {/* Waar een ISRC vinden */}
+            <div className="about-item">
+                <h3>Waar kan ik een ISRC vinden?</h3>
+                <p>
+                    Ga hiervoor naar <a href="https://www.isrcfinder.com/" target="_blank" rel="noopener noreferrer">ISRC Finder</a>
+                </p>
+            </div>
+
+            {/* Wat is Apple Music? */}
+            <div className="about-item">
+                <h3>Wat is Apple Music?</h3>
+                <p>
+                    Apple Music is het streaming platform van Apple en biedt toegang tot miljoenen releases. Elke track op Apple Music is voorzien van een ISRC.
+                    <br/>
+                    Voor meer informatie over Apple Music, zie: <a
+                    href="https://www.apple.com/nl/apple-music/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Apple Music
+                </a>
+                </p>
+            </div>
+
+            {/* Contactinformatie */}
+            <div className="about-item">
+                <h3>Contact</h3>
+                <p>Heb je vragen? Stuur een berichtje via Teams, dan kan ik je helpen!</p>
+            </div>
         </section>
     );
 };

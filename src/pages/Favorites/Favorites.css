@@ -1,0 +1,71 @@
+.favorites-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.no-favorites {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolommen */
+    grid-template-rows: repeat(3, 1fr);    /* 3 rijen */
+    gap: 10px;
+    width: 100%;
+}
+
+.favorite-item, .export-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 90px; /* Zorg voor een consistente hoogte */
+    border: 2px solid #CFE2FF;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none; /* Verwijder de link-onderstreping */
+    color: inherit; /* Zorg ervoor dat de tekst de standaard kleur heeft */
+}
+
+.favorite-artwork {
+    width: 100px; /* Zorg voor een vaste breedte voor artwork */
+    height: 100px; /* Zorg voor een vaste hoogte voor artwork */
+    object-fit: cover; /* Behoud de verhouding van het artwork */
+    border-radius: 8px;
+}
+
+.favorite-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.favorite-info p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.export-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.export-button:hover {
+    background

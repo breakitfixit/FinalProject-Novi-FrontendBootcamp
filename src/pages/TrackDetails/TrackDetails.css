@@ -1,0 +1,67 @@
+.track-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.track-details-container h2 {
+    font-size: 35px;
+}
+
+.track-details-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.track-details-list {
+    flex: 1;
+    min-width: 250px;
+}
+
+.track-details-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.track-details-list li {
+    margin-bottom: 5px;
+}
+
+.track-artwork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.track-artwork img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.heart-icon {
+    font-size: 32px; /* Duidelijk zichtbare emoji voor selecteren van favorites */
+}
+
+.track-preview {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}

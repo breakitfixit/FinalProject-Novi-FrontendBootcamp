@@ -1,35 +1,63 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
-
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, handleLogout }) => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <Link to="/">
-                    <img src="/src/assets/images/logo.png" alt="Logo"/>
-                </Link>
+                <NavLink to="/">
+                    <img src="/src/assets/images/logo.png" alt="Logo" />
+                </NavLink>
             </div>
-            <ul className="navbar navbar-list">
-                <li className="nav-items">
-                    <Link to="/" className="navbar-link">Home</Link>
-                </li>
-                <li className="nav-items">
-                    <a href="#about" className="navbar-link">About</a> {/* Aangepast naar anchor link, op zelfde manier zoals op de isrcfinder website gebeurd */}
-                </li>
-                <li className="nav-items">
-                    <Link to="/favorieten" className="navbar-link">Favorieten</Link>
-                </li>
-                <li className="nav-items">
-                    <Link to="/profile" className="navbar-link">Profiel</Link>
-                </li>
-                <li className="nav-items">
-                    Uitloggen
-                </li>
-            </ul>
+
+            {/* Toon navigatielinks alleen als de gebruiker is ingelogd */}
+            {isLoggedIn && (
+                <ul className="navbar-list">
+                    <li className="nav-items">
+                        <NavLink
+                            to="/"
+                            className={({isActive}) =>
+                                isActive ? 'navbar-link nav-item-active' : 'navbar-link'
+                            }
+                        >
+                            Home
+                        </NavLink>
+                    </li>
+                    <li className="nav-items">
+                        {/* 'About' is een interne link*/}
+                        <a href="#about" className="navbar-link">About</a>
+                    </li>
+                    <li className="nav-items">
+                        <NavLink
+                            to="/favorieten"
+                            className={({isActive}) =>
+                                isActive ? 'navbar-link nav-item-active' : 'navbar-link'
+                            }
+                        >
+                            Favorites
+                        </NavLink>
+                    </li>
+                    <li className="nav-items">
+                        <NavLink
+                            to="/profile"
+                            className={({isActive}) =>
+                                isActive ? 'navbar-link nav-item-active' : 'navbar-link'
+                            }
+                        >
+                            Profile
+                        </NavLink>
+                    </li>
+                    {/* Uitlogknop */}
+                    <li className="nav-items">
+                        <button onClick={handleLogout} className="navbar-link logout-button">
+                            Sign Out
+                        </button>
+                    </li>
+                </ul>
+            )}
         </nav>
     );
-}
+};
 
 export default Navbar;

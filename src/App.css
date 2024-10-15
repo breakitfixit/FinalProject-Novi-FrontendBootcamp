@@ -1,94 +1,44 @@
-/*.navbar {*/
-/*    top: 24px;*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    align-items: center;*/
-/*    justify-content: space-between; !*logo en ul uiterste zijden*!*/
-/*    flex-wrap: nowrap;*/
-/*    box-sizing: border-box;*/
-/*    width: 1392px;*/
-/*    height: 64px;*/
-/*    left: 24px;*/
-/*    background: #F8F9FA;*/
-/*    !*border: 1px solid #DEE2E6;*!*/
-/*    border-radius: 16px;*/
-/*}*/
-
-/*.navbar-logo {*/
-/*    border-radius: 16px;*/
-/*    flex-grow: 3;*/
-/*    flex-shrink: 0;*/
-/*    flex-basis: auto;*/
-/*    align-self: auto;*/
-/*    order: 0;*/
-/*}*/
-
-/*.navbar-logo img {*/
-/*    width: 100px;*/
-/*    height: 30px;*/
-/*    border-radius: 16px;*/
-/*    flex-shrink: ;*/
-/*}*/
-
-/*.navbar ul {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: flex-end;*/
-/*    align-items: center;*/
-/*    list-style: none;*/
-/*    flex-grow: 0;*/
-/*    flex-shrink: 0;*/
-/*    flex-basis: auto;*/
-/*    align-self: auto;*/
-/*    order: 0;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*}*/
-
-/*.navbar ul li {*/
-/*    margin: 0 16px;*/
-/*}*/
-
 .appContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    padding-top: 64px; /* padding aan de bovenkant toegevoegd voor ruimte vaste navbar */
+    justify-content: center;
+    align-items: center; /* Center align items */
+    padding-top: 20px; /* Padding for fixed navbar */
+    width: 100%; /* Zorg ervoor dat het 100% van de containerbreedte inneemt */
+    height: auto; /* Allow height to adjust */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 body {
     background-image: url('./assets/images/background-image.png');
     background-repeat: no-repeat;
-    background-position: center;
     background-position: center center;
+    background-size: cover; /* Zorg ervoor dat de afbeelding de volledige container bedekt */
     margin: 0;
     padding: 0;
 }
-
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-    border: lightslategrey dotted 2px;
+    /*border: 2px dotted lightslategrey;*/
     width: 100%;
+    max-width: 1440px;
+    height: auto;
 }
 
 .tapePanel {
-    width: 1076px;
-    height: 663px;
-    top: 180px;
-    left: 182px;
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
     gap: 10px;
-    border-radius: var(--Radiusradius-xxl);
-    opacity: 0px;
     background: #F8F9FA;
     border-radius: 32px;
     margin: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* licht schaduw toegevoegd voor diepte-effect */
 }
 
 .about {
@@ -99,9 +49,8 @@ main {
     padding: 20px;
     background: #280096;
     border-radius: 32px;
-    width: 1440px;
-    height: 663px;
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
     gap: 10px;
-    opacity: 0px;
 }
-

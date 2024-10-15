@@ -1,38 +1,66 @@
 .navbar {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 1392px;
-    height: 64px;
-    flex-shrink: 0;
-    border-radius: var(--Radius-radius-xl, 16px);
-    border: 1px solid var(--Gray-300, #DEE2E6);
+    justify-content: space-between; /* Logo aan de linkerkant, items aan de rechterkant */
+    align-items: center; /* Verticale centrering van de items */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1400px;
+    height: 65px;
+    border-radius: 16px;
     background: var(--Gray-100, #F8F9FA);
+    padding: 10px 60px; /* spacing */
+    margin: 5px 0;
+    box-sizing: border-box
 }
 
 .navbar-logo {
-    width: 98.833px;
-    height: 30px;
-    flex-shrink: 0;
+    display: flex;
     align-items: center;
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
 }
 
-
+.navbar-logo img {
+    width: 100%; /* Zorg dat de afbeelding zich aanpast aan de container */
+    height: auto;
+}
 
 .navbar ul {
-    display: inline-flex;
+    display: flex; /* Items worden in één rij geplaatst */
+    justify-content: flex-end;
     align-items: center;
-    gap: 8px;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar ul li {
-    margin: 0 16px;
-}
-
-.nav-items {
+/* Basisstijl voor navigatielinks */
+.navbar-link {
     display: flex;
-    padding: 6px 16px;
-    align-items: flex-start;
-    border-radius: 6px;
+    align-items: center;
+    color: #0D6EFD;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+/* Hover-effect voor navigatielinks */
+.navbar-link:hover {
+    background: var(--Primary-Color-Light, #0C6FFF);
+    color: white;
+}
+
+/* Stijl voor het actieve navigatie-item */
+.navbar-link.nav-item-active {
     background: var(--Primary-Color-Dark, #0A58CA);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+}
+
+/* Stijl voor de nav-items (lijstitems) */
+.nav-items {
+    list-style: none;
+    margin: 0 10px; /* Optionele marge tussen items */
 }

@@ -1,0 +1,58 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-container h2 {
+    font-size: 35px;
+}
+
+.profile-input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.profile-button {
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .profile-button {
+    background-color: #333;
+}
+
+.disco-mode {
+    animation: disco 3s 1; /* zorg dat disco mode na 3 seconde stopt */
+}
+
+@keyframes disco {
+    0% { background-color: #8e2a8b; }
+    25% { background-color: #ef58a0; }
+    50% { background-color: #fde74e; }
+    75% { background-color: #97bd4c; }
+    100% { background-color: #ca1f27; }
+}
+
+.disco-mode .profile-button {
+    animation: disco 3s 1;
+}
+
+.disco-mode .profile-button:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,19 @@
+.input-bar-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-bar-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-bar-field {
+    width: 500px;
+    height: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}

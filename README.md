@@ -1,4 +1,6 @@
 # 2024-Novi-Eindopdracht-van-Rick-Commandeur 
+https://github.com/breakitfixit/FinalProject-Novi-FrontendBootcamp
+
 
 Dit project is mijn eindopdracht voor de Frontend Bootcamp bij Novi Hogeschool. Het idee voor de opdracht is in samenwerking met Sena (stichting ter exploitatie van naburige rechten) tot stand gekomen.
 Het betreft een webapplicatie "TOON" die gebruik maakt van de Apple Music API voor het ophalen en weergeven van muziekinformatie op basis van ISRC-codes. 

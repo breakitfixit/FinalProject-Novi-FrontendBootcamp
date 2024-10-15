@@ -1,4 +1,4 @@
-# 2024-Novi-Eindopdracht-Sena
+# 2024-Novi-Eindopdracht-van-Rick-Commandeur 
 
 Dit project is mijn eindopdracht voor de Frontend Bootcamp bij Novi Hogeschool. Het idee voor de opdracht is in samenwerking met Sena (stichting ter exploitatie van naburige rechten) tot stand gekomen.
 Het betreft een webapplicatie "TOON" die gebruik maakt van de Apple Music API voor het ophalen en weergeven van muziekinformatie op basis van ISRC-codes. 
@@ -10,9 +10,6 @@ Deze tool is in te zetten voor werknemers van Sena als ondersteuning bij control
 2. [Installatie](#installatie)
 3. [Gebruik](#gebruik)
 4. [ISRC Testgegevens](#isrc-testgegevens)
-5. [Belangrijke configuratie](#belangrijke-configuratie)
-6. [Beschikbare scripts](#beschikbare-scripts)
-7. [Licentie](#licentie)
 
 ## Over het project
 
@@ -96,3 +93,8 @@ of zoeken via isrcfinder.com
 
 
 
+
+
+
+voor vragen ben ik te bereiken via MS Teams en rick.commandeur@novi-education.nl
+Rick Commandeur 

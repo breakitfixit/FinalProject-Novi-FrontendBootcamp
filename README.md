@@ -74,8 +74,9 @@ Door te klikken op een van de gevonden resultaten kom je op de pagina trackdetai
 Sla maximaal 8 tracks op als favorieten en exporteer deze naar een CSV-bestand.
 
 5. Favorieten exporteren in .csv
-De selectie van 8 f
-6. Profiel aanpassen:
+De selectie van 8 favorieten kan in zijn geheel worden geëxporteerd naar een .csv-file. Dit bestand bevat alle details zoals weergegeven op de trackdetails page
+
+7. Profiel aanpassen:
 Gebruikers kunnen hun profiel aanpassen en favorieten beheren via de instellingenpagina.
 
 ## ISRC Testgegevens

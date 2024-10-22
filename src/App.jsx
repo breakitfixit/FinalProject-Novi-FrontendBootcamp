@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext'; // Importeer AuthProvider
 import Home from './pages/Home/Home';
 import TrackDetails from './pages/TrackDetails/TrackDetails';
 import Favorites from './pages/Favorites/Favorites';
@@ -31,6 +32,7 @@ function App() {
     };
 
     return (
+        <AuthProvider> {/* AuthProvider toegevoegd */}
         <div className="appContainer">
             <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} /> {/* Inclusief props zodat navigatie enkel zichtbaar is wanneer de gebruiker is ingelogd*/}
             <main>
@@ -51,6 +53,7 @@ function App() {
                 <p>&copy; 2024 Rick Commandeur | Eindopdracht voor Novi Hogeschool | In samenwerking met Sena</p>
             </footer>
         </div>
+        </AuthProvider>
     );
 }
 

@@ -1,44 +1,48 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './Login.css';
 import LoginButton from "../../components/LoginButton/LoginButton";
 import InputBar from "../../components/InputBar/InputBar";
-import { authenticateUser, getUserInfo } from '../../services/backendApi';
+import { AuthContext } from '../../context/AuthContext'; // AuthContext import voor useContext toevoeging
+// import { authenticateUser, getUserInfo } from '../../services/backendApi'; // niet meer nodig door useContext
 import { useNavigate } from 'react-router-dom';
 
-function Login({ setIsLoggedIn }) {
-    // State definieren voor de gebruikersnaam, wachtwoord en foutmeldingen
-    // Zie Hoofdstuk 5 over State Management in React
+
+function Login() {
+    // State definieren voor de gebruikersnaam, wachtwoord en foutmeldingen >> H5 State Management in React
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null); // error state
-    const [userInfo, setUserInfo] = useState(null); // gebruikersinformatie state
-    const navigate = useNavigate(); // Navigeren naar andere routes
+    // const [userInfo, setUserInfo] = useState(null); // gebruikersinformatie state - niet meer nodig door useContext
+    const navigate = useNavigate(); // Navigatie naar andere pagina's
+
+    // // useContext toevoegen om de gebruikersinformatie en setUserInfo-functie te gebruiken
+    // const { setUserInfo } = useContext(AuthContext); // setUserInfo-functie uit AuthContext
+
+    // Gebruik de login-functie vanuit de context
+    const { login, userInfo } = useContext(AuthContext);
 
     // Functie om de loginlogica af te handelen - sla jwt token op in localstorage
     const handleLogin = async () => {
         try {
-            const data = await authenticateUser(username, password); // Roep de authenticateUser service aan
-            if (data?.jwt) {
-                localStorage.setItem('token', data.jwt); // Sla het JWT-token op in localStorage
-
-                // Haal de gebruikersinformatie op met de getUserInfo-functie en bewaar het in de state
-                const userData = await getUserInfo(username, data.jwt);
-                setUserInfo(userData); // Sla de gebruikersinformatie op
-
-                setIsLoggedIn(true); // Update de inlogstatus in de parent component
-                navigate('/'); // Navigeer naar homepagina na inloggen
-            } else {
-                setError('Ongeldige inloggegevens.'); // Toon foutmelding bij verkeerde inloggegevens
-            }
-        } catch {
-            setError('Er is een fout opgetreden. Probeer het opnieuw.'); // Algemene foutmelding
+            await login(username, password); // Gebruik de login-functie vanuit context
+            setError(null); // Reset foutmelding
+            navigate('/'); // Navigeer naar homepagina na inloggen
+        } catch (error) {
+            setError('Er is een fout opgetreden. Probeer het opnieuw.'); // Toon foutmelding bij inlogfout
         }
     };
 
     // Functie om het formulier in te dienen
     const handleSubmit = (e) => {
         e.preventDefault(); //
-        handleLogin(); // Roep de loginfunctie aan
+        handleLogin() // Roep de handleLogin-functie aan
+            .then(() => {
+                console.log("Login succesvol");
+            })
+            .catch((error) => {
+                console.error("Login mislukt:", error.message); // error loggen
+            });
+
     };
 
     const handleForgotPassword = () => {
@@ -72,6 +76,7 @@ function Login({ setIsLoggedIn }) {
                     type="password"
                     required // gemarkeerd als verplicht veld
                     className="login-input"
+                    autocomplete="current-password" // toegevoegd dankzij tip vanuit de console om autocomplete te bevorderen
                 />
                 <LoginButton/>
                 <div className="button-row">

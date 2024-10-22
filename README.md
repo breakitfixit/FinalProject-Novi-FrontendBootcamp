@@ -37,14 +37,13 @@ Om de applicatie lokaal te draaien, volg je de volgende stappen:
    npm install
    
 3. **configuratie AppleMusicAuth.jsx:**
-  In het bestand AppleMusicAuth.jsx moet de volgende code worden toegevoegd op de __________om de tokenResponse correct te activeren:
+  In het bestand AppleMusicAuth.jsx moet de volgende code worden toegevoegd op de __________* om de tokenResponse correct te activeren:
    *>>>>>>>>> Zie het via Teams ingediende README-bestand voor de aanvullende code. Let op: deze code wordt niet online gedeeld. Neem bij vragen gerust contact op via Teams of e-mail.
-   
 
-5. **Start de development server:**
+4. **Start de development server:**
   npm run dev
    
-6. **Proxy-configuratie in Vite:**
+5. **Proxy-configuratie in Vite:**
   In het bestand vite.config.js wordt een proxy gebruikt om de /api/-routes te omleiden naar de backend:
 
     export default defineConfig({
@@ -63,8 +62,13 @@ Om de applicatie lokaal te draaien, volg je de volgende stappen:
 
 ## Gebruik
 
-1. Login
+1. Registratie
+Zonder registratie is het niet mogelijk om de applicatie te gebruiken. 
+Volg de stappen in de registratiepagina om een gebruikersnaam en wachtwoord aan te maken.
+
+2. Login
 Gebruikersnaam en wachtwoord aanmaken kan via de registratie-button
+
 2. Zoeken op ISRC:
 Voer een ISRC-code in de zoekbalk in en klik op "Zoek" om muziekinformatie van de Apple Music API op te halen.
 
@@ -77,8 +81,8 @@ Sla maximaal 8 tracks op als favorieten en exporteer deze naar een CSV-bestand.
 5. Favorieten exporteren in .csv
 De selectie van 8 favorieten kan in zijn geheel worden geëxporteerd naar een .csv-file. Dit bestand bevat alle details zoals weergegeven op de trackdetails page
 
-7. Profiel aanpassen:
-Gebruikers kunnen hun profiel aanpassen en favorieten beheren via de instellingenpagina.
+6. Uitloggen
+Door op de uitlog-button te klikken wordt de gebruiker uitgelogd en teruggeleid naar de loginpagina
 
 ## ISRC Testgegevens
 

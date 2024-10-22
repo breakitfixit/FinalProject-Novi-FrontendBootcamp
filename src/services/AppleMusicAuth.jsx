@@ -5,7 +5,7 @@ import axios from 'axios';
 // Zie omschrijving in de README.md
 export const fetchJwtToken = async () => {
     try {
-        const tokenResponse = await axios.get('/api/token?secret=_________________');
+        const tokenResponse = await axios.get('/api/token?secret=4935EF0596954B188FDCF59B07AEC17B93DC1B1248B3453FB9F31D1AAC2EF067');
         return tokenResponse.data.token;
     } catch (error) {
         console.error('Fout bij het fetchen van JWT token:', error);
@@ -13,7 +13,7 @@ export const fetchJwtToken = async () => {
     }
 };
 
-// // Het is helaas uiteindelijk niet gelukt via de .env file
+// // Het is helaas niet gelukt via onderstaande code waarin ik gebruik maak van een .env file
 // import axios from 'axios';
 //
 // // Functie waarmee backend wordt aangeroepen om een JWT-token op te halen van de Apple Music API

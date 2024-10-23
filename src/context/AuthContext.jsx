@@ -1,17 +1,30 @@
 import { createContext, useState } from 'react';
-import { authenticateUser, getUserInfo } from '../services/backendApi'; // Importeer de functies
+import { authenticateUser, getUserInfo, registerUser } from '../services/backendApi'; // Importeer de functies
+import { useNavigate } from 'react-router-dom';
 
-export const AuthContext = createContext({} );
+const AuthContext = createContext({
+    userInfo: null,
+    token: '', // Lege string als standaardwaarde
+    login: () => {}, // Lege functies toegevoegd om te voorkomen dat de context null is
+    register: () => {},
+    logout: () => {},
+});
 
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
     const [userInfo, setUserInfo] = useState(null);
     const [token, setToken] = useState(localStorage.getItem('token') || '');
+    const navigate = useNavigate();
 
     const login = async (username, password) => {
         try {
             const data = await authenticateUser(username, password); // Gebruik de geïmporteerde functie
             setToken(data.jwt);
             localStorage.setItem('token', data.jwt);
+                console.log('Login succesvol:', data);
+                if (data) {
+                    navigate('/register'); // Navigeer naar homepagina na inloggen
+                    console.log('Navigeer');
+                }
 
             const userData = await getUserInfo(username, data.jwt); // Haal gebruikersinformatie op
             setUserInfo(userData);
@@ -31,9 +44,9 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = () => {
-        setToken(null);
-        setUserInfo(null);
-        localStorage.removeItem('token');
+        setToken(null); // Update de token
+        setUserInfo(null); // Update de inlogstatus
+        localStorage.removeItem('token'); // Verwijder het token uit localStorage
     };
 
     return (
@@ -42,3 +55,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+export { AuthContext, AuthProvider }; // geen directe exports van de functies meer zoals in de vorige versie

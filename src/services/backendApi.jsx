@@ -59,3 +59,4 @@ export const getUserInfo = async (username, token) => {
         throw error;
     }
 };
+

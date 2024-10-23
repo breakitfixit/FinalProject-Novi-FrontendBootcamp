@@ -3,20 +3,13 @@ import './Login.css';
 import LoginButton from "../../components/LoginButton/LoginButton";
 import InputBar from "../../components/InputBar/InputBar";
 import { AuthContext } from '../../context/AuthContext'; // AuthContext import voor useContext toevoeging
-// import { authenticateUser, getUserInfo } from '../../services/backendApi'; // niet meer nodig door useContext
-import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
-    // State definieren voor de gebruikersnaam, wachtwoord en foutmeldingen >> H5 State Management in React
+    // State voor gebruikersnaam, wachtwoord en foutmeldingen >> H5 State Management in React
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null); // error state
-    // const [userInfo, setUserInfo] = useState(null); // gebruikersinformatie state - niet meer nodig door useContext
-    const navigate = useNavigate(); // Navigatie naar andere pagina's
-
-    // // useContext toevoegen om de gebruikersinformatie en setUserInfo-functie te gebruiken
-    // const { setUserInfo } = useContext(AuthContext); // setUserInfo-functie uit AuthContext
 
     // Gebruik de login-functie vanuit de context
     const { login, userInfo } = useContext(AuthContext);
@@ -26,7 +19,6 @@ function Login() {
         try {
             await login(username, password); // Gebruik de login-functie vanuit context
             setError(null); // Reset foutmelding
-            navigate('/'); // Navigeer naar homepagina na inloggen
         } catch (error) {
             setError('Er is een fout opgetreden. Probeer het opnieuw.'); // Toon foutmelding bij inlogfout
         }
@@ -76,7 +68,7 @@ function Login() {
                     type="password"
                     required // gemarkeerd als verplicht veld
                     className="login-input"
-                    autocomplete="current-password" // toegevoegd dankzij tip vanuit de console om autocomplete te bevorderen
+                    autocomplete="current-password" // tip vanuit de console toegepast om autocomplete te bevorderen
                 />
                 <LoginButton/>
                 <div className="button-row">

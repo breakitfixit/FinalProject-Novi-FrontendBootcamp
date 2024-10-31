@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
             localStorage.setItem('token', data.jwt);
                 console.log('Login succesvol:', data);
                 if (data) {
-                    navigate('/register'); // Navigeer naar homepagina na inloggen
+                    navigate('/'); // Navigeer naar homepagina na inloggen
                     console.log('Navigeer');
                 }
 

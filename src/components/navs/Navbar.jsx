@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = ({ isLoggedIn, handleLogout }) => {
+const Navbar = ({ handleLogout }) => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
@@ -12,7 +12,6 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
             </div>
 
             {/* Toon navigatielinks alleen als de gebruiker is ingelogd */}
-            {isLoggedIn && (
                 <ul className="navbar-list">
                     <li className="nav-items">
                         <NavLink
@@ -55,7 +54,6 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
                         </button>
                     </li>
                 </ul>
-            )}
         </nav>
     );
 };

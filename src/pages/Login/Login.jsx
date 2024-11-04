@@ -3,22 +3,23 @@ import './Login.css';
 import LoginButton from "../../components/LoginButton/LoginButton";
 import InputBar from "../../components/InputBar/InputBar";
 import { AuthContext } from '../../context/AuthContext'; // AuthContext import voor useContext toevoeging
-
+import { useNavigate } from "react-router-dom";
 
 function Login() {
     // State voor gebruikersnaam, wachtwoord en foutmeldingen >> H5 State Management in React
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null); // error state
+    const { login } = useContext(AuthContext); // Gebruik de login-functie vanuit de context
+    const navigate = useNavigate(); // Voor navigatie nadat de gebruiker is ingelogd
 
-    // Gebruik de login-functie vanuit de context
-    const { login, userInfo } = useContext(AuthContext);
 
     // Functie om de loginlogica af te handelen - sla jwt token op in localstorage
     const handleLogin = async () => {
         try {
-            await login(username, password); // Gebruik de login-functie vanuit context
+            await login(username, password); // Gebruik de login-functie vanuit AuthContext
             setError(null); // Reset foutmelding
+            navigate('/'); // Navigeer naar de homepagina na succesvolle login
         } catch (error) {
             setError('Er is een fout opgetreden. Probeer het opnieuw.'); // Toon foutmelding bij inlogfout
         }
@@ -27,14 +28,7 @@ function Login() {
     // Functie om het formulier in te dienen
     const handleSubmit = (e) => {
         e.preventDefault(); //
-        handleLogin() // Roep de handleLogin-functie aan
-            .then(() => {
-                console.log("Login succesvol");
-            })
-            .catch((error) => {
-                console.error("Login mislukt:", error.message); // error loggen
-            });
-
+        handleLogin(); // Roep de handleLogin-functie aan
     };
 
     const handleForgotPassword = () => {
@@ -85,13 +79,6 @@ function Login() {
              */}
             {error && <div className="error-message">{error}</div>}
 
-            {/* Toon gebruikersinformatie na inloggen */}
-            {userInfo && (
-                <div className="user-info">
-                    <h2>Welkom, {userInfo.name}</h2>
-                    <p>Email: {userInfo.email}</p>
-                </div>
-            )}
         </div>
     );
 }

@@ -38,12 +38,13 @@ Om de applicatie lokaal te draaien, volg je de volgende stappen:
    
 3. **configuratie AppleMusicAuth.jsx:**
   In het bestand AppleMusicAuth.jsx moet de volgende code worden toegevoegd op de __________om de tokenResponse correct te activeren:
-  4935EF0596954B188FDCF59B07AEC17B93DC1B1248B3453FB9F31D1AAC2EF067
+   *>>>>>>>>> Zie het via Teams ingediende README-bestand voor de aanvullende code. Let op: deze code wordt niet online gedeeld. Neem bij vragen gerust contact op via Teams of e-mail.
 
-5. **Start de development server:**
+
+4. **Start de development server:**
   npm run dev
    
-6. **Proxy-configuratie in Vite:**
+5. **Proxy-configuratie in Vite:**
   In het bestand vite.config.js wordt een proxy gebruikt om de /api/-routes te omleiden naar de backend:
 
     export default defineConfig({

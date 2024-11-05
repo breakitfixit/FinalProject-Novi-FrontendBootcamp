@@ -5,7 +5,7 @@ import axios from 'axios';
 // Zie omschrijving in de README.md
 export const fetchJwtToken = async () => {
     try {
-        const tokenResponse = await axios.get('/api/token?secret=4935EF0596954B188FDCF59B07AEC17B93DC1B1248B3453FB9F31D1AAC2EF067');
+        const tokenResponse = await axios.get('/api/token?secret=__________'); // nogmaals: zie README.md voor de secret
         return tokenResponse.data.token;
     } catch (error) {
         console.error('Fout bij het fetchen van JWT token:', error);

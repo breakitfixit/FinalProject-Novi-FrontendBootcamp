@@ -1,5 +1,6 @@
-import {useState, useEffect} from 'react';
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {useContext} from "react";
+import {Routes, Route} from 'react-router-dom';
+import {AuthContext} from './context/AuthContext'; // Importeer AuthContext
 import Home from './pages/Home/Home';
 import TrackDetails from './pages/TrackDetails/TrackDetails';
 import Favorites from './pages/Favorites/Favorites';
@@ -13,31 +14,16 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'; // Importeer 
 import './App.css';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token')); // Check of gebruiker ingelogd is
-    const navigate = useNavigate();
+    const {isAuth} = useContext(AuthContext); // Haal de isAuth-status uit de context
 
-    // Controleer bij pagina-verversing of de gebruiker niet ingelogd is en navigeer naar loginpagina
-    useEffect(() => {
-        if (!isLoggedIn && window.location.pathname !== '/login' && window.location.pathname !== '/register') {
-            navigate('/login');
-        }
-    }, [isLoggedIn, navigate]);
-
-    // Uitlogfunctie: Verwijder token en navigeer naar loginpagina
-    const handleLogout = () => {
-        localStorage.removeItem('token'); // Verwijder het token uit localStorage
-        setIsLoggedIn(false); // Update de inlogstatus
-        navigate('/login'); // Navigeer naar de loginpagina
-    };
 
     return (
         <div className="appContainer">
-            <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} /> {/* Inclusief props zodat navigatie enkel zichtbaar is wanneer de gebruiker is ingelogd*/}
+            {isAuth && <Navbar/>} {/* Navbar alleen tonen als isAuth true is */}
             <main>
                 <CasettePanel>
                     <Routes>
-                        {/* Alleen toegang als gebruiker ingelogd is */}
-                        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
+                        <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/" element={<PrivateRoute><Home/></PrivateRoute>}/>
                         <Route path="/track-details/:id" element={<PrivateRoute><TrackDetails/></PrivateRoute>}/>

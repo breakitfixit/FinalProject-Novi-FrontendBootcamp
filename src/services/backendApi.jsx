@@ -37,7 +37,6 @@ export const registerUser = async (userData) => {
         // Retourneer de response data (meestal een bevestiging van registratie)
         return response.data;
     } catch (error) {
-        // Log en retourneer de fout indien het verzoek mislukt
         console.error('Fout bij registratie:', error.response ? error.response.data : error.message);
         throw error;
     }
@@ -46,7 +45,6 @@ export const registerUser = async (userData) => {
 // Functie om gebruikersinformatie op te halen (JWT-token is vereist)
 export const getUserInfo = async (username, token) => {
     try {
-        // Stuur een GET request met de JWT-token in de Authorization header
         const response = await axios.get(`https://api.datavortex.nl/toonrepertoire/users/${username}/info`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -57,28 +55,8 @@ export const getUserInfo = async (username, token) => {
         // Retourneer de opgehaalde gebruikersinformatie
         return response.data;
     } catch (error) {
-        // Log en retourneer de fout indien het verzoek mislukt
         console.error('Fout bij het ophalen van gebruikersinformatie:', error.response ? error.response.data : error.message);
         throw error;
     }
 };
 
-//
-// export const getCurrentUser = async (token) => {
-//     try {
-//         const response = await fetch('https://api.datavortex.nl/toonrepertoire/users/me', {
-//             headers: {
-//                 Authorization: `Bearer ${token}`,
-//                 'Content-Type': 'application/json',
-//             },
-//         });
-//         if (!response.ok) {
-//             throw new Error(`HTTP-fout! status: ${response.status}`);
-//         }
-//         const data = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error('Fout bij het ophalen van huidige gebruikersgegevens:', error);
-//         throw error;
-//     }
-// };

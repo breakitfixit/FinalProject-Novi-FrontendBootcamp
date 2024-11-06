@@ -1,4 +1,4 @@
-# Logs
+# Logbestanden
 logs
 *.log
 npm-debug.log*
@@ -7,12 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build en distributie bestanden
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Configuratiebestanden van code-editors
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,5 +26,16 @@ dist-ssr
 *.sln
 *.sw?
 
-# Ignore environment files
+# Omgevingsvariabelen
 .env
+.env.local
+.env.*.local
+
+# Cache- en tijdelijke bestanden
+.cache/
+.tmp/
+*.tmp
+
+# Output van build- en testtools
+out/
+coverage/

@@ -30,8 +30,8 @@ Om de applicatie lokaal te draaien, volg je de volgende stappen:
 ### Stappen
 
 1. **Clone de repository:**
-   git clone https://github.com/gebruikersnaam/2024-novi-eindopdracht-sena.git
-   cd 2024-novi-eindopdracht-sena
+   git clone https://github.com/breakitfixit/FinalProject-Novi-FrontendBootcamp.git
+   cd FinalProject-Novi-FrontendBootcamp
 
 2. **Installeer de benodigde dependencies:**
    npm install
